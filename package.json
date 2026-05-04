@@ -1,23 +1,28 @@
 {
   "name": "coursify",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/app.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "client": "cd client && npm run dev",
+    "build": "cd client && npm run build"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "A full-stack course marketplace",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
     "dotenv": "^16.4.7",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.13.1",
-    "Router": "^2.1.0",
     "zod": "^3.24.2"
   },
   "devDependencies": {
