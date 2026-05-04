@@ -19,7 +19,7 @@ app.use(
 );
 app.use(express.json());
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, "../public")));
+app.use(express.static(path.join(__dirname, "../client/dist")));
 
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/courses", coursesRouter);
@@ -28,7 +28,7 @@ app.use("/api/v1/purchases", purchasesRouter);
 // Serve React app for all non-API GET routes
 app.use((req, res, next) => {
   if (req.method === "GET" && !req.path.startsWith("/api/")) {
-    return res.sendFile(path.join(__dirname, "../public/index.html"));
+    return res.sendFile(path.join(__dirname, "../client/dist/index.html"));
   }
   next();
 });
